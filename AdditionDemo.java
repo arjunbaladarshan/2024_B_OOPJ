@@ -3,7 +3,7 @@ class Box{
 	int width;
 
 	public Box(){
-		height = 5;
+		height = 10;
 		width = 5;
 	}
 
