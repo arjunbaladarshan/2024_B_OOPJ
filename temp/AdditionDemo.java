@@ -1,4 +1,4 @@
-class Box extends TestNew{
+class Box{
 	int height;
 	int width;
 
@@ -15,11 +15,11 @@ class Box extends TestNew{
 	public void print(){
 		for(int i=0;i<height;i++){
 			for(int j=0;j<width;j++){
-				chaapEJLineMa("* ");
+				System.out.print("* ");
 			}
-			chaapBijiLineMa("");
+			System.out.println("");
 		}
-		chaapBijiLineMa("==============================");
+		System.out.println("==============================");
 	}
 }
 public class AdditionDemo{
