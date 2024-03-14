@@ -1,35 +1,45 @@
-class SmartPhone{
-	public void setAlarm(){
-		System.out.println("=== Set Alarm Steps ===");
-		System.out.println("1) Go to Settings");
-		System.out.println("2) Go to Clocks");
-		System.out.println("3) Go to Alarm");
-		System.out.println("4) Set Time");
-		System.out.println("5) Save alarm");
+import java.util.Scanner;
+class Vehicle{
+	public void start(){
+		System.out.println("Set a Key and Kick Start");
 	}
 }
-
-class IPhone extends SmartPhone{
-	public void setAlarm(){
-		System.out.println("=== Set Alarm ===");
-		System.out.println("Tell siri to set alram for you");
+class Car extends Vehicle{
+	@Override
+	public void start(){
+		System.out.println("Keep the key with you and press button");
 	}
 }
-
-class Android extends SmartPhone{
-	public void setAlarm(){
-		System.out.println("=== Set Alarm ===");
-		System.out.println("Tell Google Assist to set alram for you");
-	}	
+class Bike extends Vehicle{
+	public void start(){
+		System.out.println("Set a key and self start");
+	}
 }
-
+class EBike extends Bike{
+	public void start(){
+		System.out.println("Enter Password and go");
+	}
+}
 public class OverridingDemo{
 	public static void main(String[] args) {
-		Android oppo = new Android();
-		oppo.setAlarm();
-		IPhone i15 = new IPhone();
-		i15.setAlarm();
-		SmartPhone lava = new SmartPhone();
-		lava.setAlarm();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter \n1 for Car\n2 for Bike\n3 for EBike\n Any other numner for vehicle");
+		int temp = sc.nextInt();
+		Vehicle myVehicle = null;
+		if(temp==1){
+			myVehicle = new Car();
+		}
+		else if(temp==2){
+			myVehicle = new Bike();
+		}
+		else if(temp==3){
+			myVehicle = new EBike();
+		}
+		else{
+			myVehicle = new Vehicle();
+		}
+
+		
+		myVehicle.start();
 	}
 }
